@@ -1,10 +1,12 @@
+import products from "../../data/data"
 
+import styles from './Homepage.module.css'
 
 const Homepage = () => {
      
     return(
-        <div>
-            Homepage
+        <div className={styles.homepage}>
+
         </div>
     )
 }
