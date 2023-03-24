@@ -1,4 +1,23 @@
-.homepage{
-    padding-top: 100px;
+.container{
+    width: 80%;
 }
+
+.image{
+    margin-left: 13%;
+    height: 860px;
+}
+
+.title{
+    position: relative;
+    bottom: 95%;
+    color: #0e85e6;
+    left: 15%;
+    text-align: center;
+}
+
+.carousel{
+    padding-top: 60px;
+}
+
+
 

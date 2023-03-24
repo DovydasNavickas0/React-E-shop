@@ -14,16 +14,14 @@
     background-color: #ffffff;
     transition: 0.3s;
     border-radius: 25px;
-    border: 3px solid #bff5fc;
     overflow: hidden;
-    height: 520px;
+    height: 510px;
     position: relative;
     z-index: 10;
+    box-shadow: 10px 5px 5px #969696
 }
 
 .singleProduct:hover{
-    border: 3px solid #0e85e6;
-    border-radius: 25px;
     transition: 0.5s;
     overflow: hidden;
 }
@@ -54,16 +52,16 @@
 }
 
 .productImage{
-    transition: 1s;
+    transition: 0.5s;
     object-fit: cover;
     z-index: 0;
     position: absolute;
     height: 400px;
-    width: 510px;
+    width: 512px;
 }
 
 .productDescription{
-    background-color: rgb(250, 247, 247);
+    background-color: #faf7f7;
     color: black;
     border-radius: 20px;
     display: flex;
@@ -73,7 +71,7 @@
     position: relative;
     top: 10%;
     text-align: center;
-    transition: 1s;
+    transition: 0.6s;
     padding: 10px;
 }
 

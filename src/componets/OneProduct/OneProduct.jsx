@@ -5,8 +5,8 @@ const OneProduct = (props) => {
     return(
         <div className={styles.container}>
             {
-                props.products.map((item, index) => (
-                    <div key={index} className={styles.singleProduct}>
+                props.products.map(item => (
+                    <div key={item.id} className={styles.singleProduct}>
                         <div className={styles.namePrice}>
                             <h2 className={styles.productName}>{item.name}</h2>
                             <h2 className={styles.productPrice}>{item.price} $</h2>
