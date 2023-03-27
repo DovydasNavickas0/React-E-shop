@@ -1,11 +1,11 @@
 import styles from './OneProduct.module.css'
 
-const OneProduct = (props) => {
+const OneProduct = ({products, addtocart}) => {
 
     return(
         <div className={styles.container}>
             {
-                props.products.map(item => (
+                products.map(item => (
                     <div key={item.id} className={styles.singleProduct}>
                         <div className={styles.namePrice}>
                             <h2 className={styles.productName}>{item.name}</h2>
@@ -14,7 +14,10 @@ const OneProduct = (props) => {
                         <img src={item.imageUrl} alt="product_image" className={styles.productImage}></img>
                         <p className={styles.productDescription}>{item.description}</p>
                         <div className={styles.btnDiv}>
-                            <button className={styles.addBtn}>add me</button>
+                            <button className={styles.addBtn}
+                            onClick={() => {
+                                console.log(item)
+                                addtocart(item)}}>add me</button>
                         </div>
                     </div>
                 ))

@@ -3,11 +3,11 @@ import OneProduct from "../OneProduct/OneProduct"
 
 import styles from './ProductList.module.css'
 
-const ProductList = () => {
+const ProductList = ({addtocart}) => {
     
     return(
         <div className={styles.list}>
-            <OneProduct products={products}/>
+            <OneProduct products={products} addtocart={addtocart}/>
         </div>
     )
 }
