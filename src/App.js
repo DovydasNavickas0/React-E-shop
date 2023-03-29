@@ -91,13 +91,34 @@ function App() {
     console.log(Productcart)
   }
 
+  //deletes 1 chosen item from the cart
+
+  const RemoveBtn = (product) => {
+
+    const newCart = [...Productcart];
+
+    console.log(newCart)
+
+    let ProductInCart = newCart.find(
+      (localVar) => product.id === localVar.id
+    )
+
+    console.log(newCart.indexOf(ProductInCart))
+
+    newCart.splice(newCart.indexOf(ProductInCart), 1)
+
+    //console.log(newCart + " removebtn")
+    setProductcart(newCart);
+    //console.log(Productcart)
+}
+
   return (
     <BrowserRouter>
         <Header/>
         <main>
             <Routes>
                 <Route index element={<Homepage />} />
-                <Route path="cart" element={<CheckoutCart Productcart={Productcart} IncreaseQuantity={IncreaseQuantity} DecreaseQuantity={DecreaseQuantity}/>} />
+                <Route path="cart" element={<CheckoutCart Productcart={Productcart} IncreaseQuantity={IncreaseQuantity} DecreaseQuantity={DecreaseQuantity} RemoveBtn={RemoveBtn}/>} />
                 <Route path="productlist" element={<ProductList addtocart={addtocart}/>} />
             </Routes>
         </main>

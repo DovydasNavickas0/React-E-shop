@@ -3,7 +3,7 @@ import styles from './CheckoutCart.module.css'
 
 import { useState } from 'react'
 
-const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity}) => {
+const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity, RemoveBtn}) => {
 
     let Cart = Productcart
 
@@ -16,31 +16,18 @@ const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity}) => {
         setFix(false)
     }
 
-    //Deletes stuff
-    const RemoveBtn = (index) => {
-        console.log(index)
-        Cart.splice(index, 1)
-        console.log(Cart)
-    }
-
     //da price math machine
     const PriceCalculator = (index) =>{
-        console.log(Cart[index])
 
-        console.log(Cart[index].price)
-        console.log(Cart[index].quantity)
+        console.log('calculating price')
 
-        let price = Cart[index].price * Cart[index].quantity
-
-        console.log(price)
-
-        return price
+        return Cart[index].price * Cart[index].quantity
     }
 
-    //price calculator but for sum
+    //da sum math machine
     const SumCalculation = () => {
 
-        console.log('calculating')
+        console.log('calculating sum')
 
         return Cart.reduce((sum, {price, quantity})=>
         sum + price*quantity, 0).toFixed(2)
@@ -65,7 +52,7 @@ const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity}) => {
                                     <td>{item.name}</td>
                                     <td> <button onClick={()=>{DecreaseQuantity(item)}}>-</button> {item.quantity} <button onClick={()=>{IncreaseQuantity(item)}}>+</button> </td>
                                     <td>{PriceCalculator(index)}</td>
-                                    <td><button onClick={()=>{RemoveBtn(index)}}>Remove</button></td>
+                                    <td><button onClick={()=>{RemoveBtn(item)}}>Remove</button></td>
                                 </tr>
                             )
                         })
