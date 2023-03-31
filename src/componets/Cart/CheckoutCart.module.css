@@ -2,15 +2,130 @@
     padding-top: 100px;
 }
 
-table, th, td{
-    border: 3px solid #000;
+table, th{
     border-collapse: collapse;
     padding: 5px;
     width: 75%;
     margin-left: 200px;
 }
 
+th{
+    border-bottom: 3px solid #000;
+    border-top: 1px solid #949494;
+    border-left: 1px solid #949494;
+    border-right: 1px solid #949494;
+}
+
+.rownumber{
+    width: 3%;
+}
+
+.productname{
+    width: 75%;
+}
+
+.productquantity{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 6%;
+}
+
+.quantitybtn{
+    width: 20px;
+    padding: 2px;
+    margin: 6px;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.15s;
+}
+
+.quantitybtn:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+
+.tableprice{
+    width: 5%;
+
+}
+
+.centertext{
+    text-align: center;
+}
+
+.tablebtn{
+    width: 7%;
+}
+
 .BtnFunctions{
     padding: 40px;
     margin-left: 200px;
+}
+
+td{
+    border-top: 0px;
+    border: 1px solid #949494;
+    padding: 5px;
+}
+
+.tdremove{
+    text-align: center;
+}
+
+.removebtnCSS{
+    background-color: #ee0808;
+    color: #fff;
+    border-style: none;
+    padding: 8px;
+    border-radius: 5px;
+    transition: 0.15s;
+    width: 60px;
+}
+
+.removebtnCSS:hover{
+    background-color: #960202;
+}
+
+.totalP{
+
+    margin-bottom: 5px;
+    position: relative;
+    left: 76%;
+}
+
+.resetbtnCSS{
+    background-color: #ee0808;
+    color: #fff;
+    border-style: none;
+    padding: 8px;
+    border-radius: 5px;
+    transition: 0.15s;
+    width: 60px;
+    position: relative;
+    left: 76%;
+}
+
+.paybtnCSS{
+    background-color: #6ac700;
+    color: #fff;
+    border-style: none;
+    padding: 8px;
+    border-radius: 5px;
+    transition: 0.15s;
+    width: 60px;
+    margin-right: 10px;
+    position: relative;
+    left: 76%;
+}
+
+.paybtnCSS:hover{
+    background-color: #427a00;
+}
+
+.resetbtnCSS:hover{
+    background-color: #960202;
 }

@@ -38,10 +38,11 @@ const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity, RemoveBt
             <table>
                 <thead>
                     <tr>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
+                        <th className={styles.rownumber}>#</th>
+                        <th className={styles.productname}>Product Name</th>
+                        <th className={styles.productquantity}>Quantity</th>
                         <th className={styles.tableprice}>Price</th>
-                        <th>Remove</th>
+                        <th className={styles.tablebtn}>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,10 +50,19 @@ const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity, RemoveBt
                         Fix && Cart.map((item, index) => {
                             return(
                                 <tr key={index}>
+                                    <td>
+                                        <p className={styles.centertext}>{index+1}</p>
+                                    </td>
                                     <td>{item.name}</td>
-                                    <td> <button onClick={()=>{DecreaseQuantity(item)}}>-</button> {item.quantity} <button onClick={()=>{IncreaseQuantity(item)}}>+</button> </td>
-                                    <td>{PriceCalculator(index)}</td>
-                                    <td><button onClick={()=>{RemoveBtn(item)}}>Remove</button></td>
+                                    <td> 
+                                        <button className={styles.quantitybtn} onClick={()=>{DecreaseQuantity(item)}}>-</button> 
+                                        {item.quantity} 
+                                        <button className={styles.quantitybtn} onClick={()=>{IncreaseQuantity(item)}}>+</button> 
+                                    </td>
+                                    <td>
+                                        <p className={styles.centertext}>{PriceCalculator(index)}$</p>
+                                    </td>
+                                    <td className={styles.tdremove}><button className={styles.removebtnCSS} onClick={()=>{RemoveBtn(item)}}>Remove</button></td>
                                 </tr>
                             )
                         })
@@ -60,9 +70,9 @@ const CheckoutCart = ({Productcart, IncreaseQuantity, DecreaseQuantity, RemoveBt
                 </tbody>
             </table>
             <div className={styles.BtnFunctions}>
-                <p>Your total {SumCalculation()}$</p>
-                <button onClick={ResetBtn}>pay</button>
-                <button onClick={ResetBtn}>reset</button>
+                <p className={styles.totalP} >Your total {SumCalculation()}$</p>
+                <button className={styles.paybtnCSS} onClick={ResetBtn}>pay</button>
+                <button className={styles.resetbtnCSS} onClick={ResetBtn}>reset</button>
             </div>
         </main>
     )
